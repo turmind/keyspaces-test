@@ -1,0 +1,5 @@
+netstat -anp | grep 28405
+tcp        0      0 10.2.205.229:50830      10.2.180.144:9142       ESTABLISHED 28405/./key-inactiv
+tcp        0      0 10.2.205.229:41654      10.2.206.30:9142        ESTABLISHED 28405/./key-inactiv
+tcp        0      0 10.2.205.229:58102      10.2.216.146:9142       ESTABLISHED 28405/./key-inactiv
+tcp        0      0 10.2.205.229:41662      10.2.206.30:9142        ESTABLISHED 28405/./key-inactiv

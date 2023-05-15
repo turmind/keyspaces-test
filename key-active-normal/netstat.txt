@@ -1,0 +1,12 @@
+运行时：
+netstat -anp | grep 27719
+tcp        0      0 10.2.205.229:53760      10.2.206.30:9142        ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:38084      10.2.180.144:9142       ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:53750      10.2.206.30:9142        ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:59518      10.2.216.146:9142       ESTABLISHED 27719/./key-active-
+
+重连后：
+tcp        0      0 10.2.205.229:44612      10.2.216.146:9142       ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:39232      10.2.180.144:9142       ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:40010      10.2.206.30:9142        ESTABLISHED 27719/./key-active-
+tcp        0      0 10.2.205.229:33874      10.2.180.144:9142       ESTABLISHED 27719/./key-active-

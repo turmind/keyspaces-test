@@ -1,0 +1,13 @@
+运行时：
+
+netstat -anp | grep 28159
+tcp        0      0 10.2.205.229:48478      10.2.216.146:9142       ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:48480      10.2.216.146:9142       ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:36690      10.2.206.30:9142        ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:51980      10.2.180.144:9142       ESTABLISHED 28159/./key-active-
+
+重连后：
+tcp        0      0 10.2.205.229:44792      10.2.206.30:9142        ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:41410      10.2.206.30:9142        ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:43634      10.2.216.146:9142       ESTABLISHED 28159/./key-active-
+tcp        0      0 10.2.205.229:38884      10.2.180.144:9142       ESTABLISHED 28159/./key-active-
