@@ -1,27 +1,35 @@
-# Keyspaces-test
+# Keyspaces-test [中文](README_cn.md)
 
-## 测试观察的情况
+## Observasion
 
-- 与keyspaces的链接在大约12900秒后断开链接，大概为35.84小时左右
-- keyspaces在断开后即刻重连，不影响业务运行
+- Connection to Keyspaces disconnect after about 12900 seconds = 35.84 hours
+- Keyspaces reconnect immeidately after disconnect, no impact to businiess
 
-## 测试准备
+## Test preparation
 
-- cpp-diver tag v2.16.0 编译并安装 https://github.com/datastax/cpp-driver/tree/2.16.0
-- simple中编译可执行文件
+- create two IAM user keyspaces service credential
+- cpp-diver tag v2.16.0 compile and install  https://github.com/datastax/cpp-driver/tree/2.16.0
+  - git clone https://github.com/datastax/cpp-driver/tree/2.16.0
+  - checkout tag v2.16.0
+  - cmake & make & make install, that will build and install the libcassandra.so file in dir /usr/local/lib
+  - add /usr/lobal/lib config file to /etc/ld.so.conf.d and use ldconfig command to make the system can find the so file
+- update the simple.c file line 20 abouth the username and password
+- Compile executables in simple by cmake & make
+- run the simple executable file
+  - in the run time, deactive one keyspaces service credential and observe and compare
 
-## 测试案例分别为以下
+## Test cases as follows
 
-- key-active-break 有效凭证不运行select
-- key-active-normal 有效凭证每30秒运行一次select
-- key-inactive-break 无效凭证不运行select
-- key-inactive-normal 无效凭证每30秒运行一次select
+- key-active-break, Valid credentials, without executing select
+- key-active-normal , Valid credentials, execute select every 30 seconds
+- key-inactive-break , Invalid credentials, without executing select
+- key-inactive-normal ,Invalid credentials, execute select every 30 seconds
 
-## 相关测试文件
+## Relevant test files
 
-- netstat.txt 为观察到的与keyspaces的socket对的情况
-- nohup.out为运行日志，重点查看内容：
-  - key-active-break 4302行
-  - key-active-normal 8602行
-  - key-inactive-break 4302行
-  - key-inactive-normal 8602行
+- netstat.txt is the observed condition of socket pairs with keyspaces
+- nohup.out is the operation log, focusing on the content:
+  - key-active-break  line 4302
+  - key-active-normal line 8602
+  - key-inactive-break line 4302
+  - key-inactive-normal line 8602
